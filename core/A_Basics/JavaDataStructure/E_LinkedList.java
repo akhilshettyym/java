@@ -1,4 +1,4 @@
-package akhilshettyym.JAVA.MyCode.A_JavaTut.JavaDataStructure;
+package akhilshettyym.JAVA.core.A_Basics.JavaDataStructure;
 
 // In the previous chapter, you learned about the ArrayList class. The LinkedList class is almost identical to the ArrayList:
 // package MeAndCode.JavaDataStructure;
