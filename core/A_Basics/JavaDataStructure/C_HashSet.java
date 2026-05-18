@@ -1,4 +1,4 @@
-package akhilshettyym.JAVA.MyCode.A_JavaTut.JavaDataStructure;
+package akhilshettyym.JAVA.core.A_Basics.JavaDataStructure;
 
 // A HashSet is a collection of items where every item is unique, and it is found in the java.util package:
 // If added twice it only appears once in the set because every item in a set has to be unique.

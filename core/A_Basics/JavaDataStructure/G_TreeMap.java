@@ -1,4 +1,4 @@
-package akhilshettyym.JAVA.MyCode.A_JavaTut.JavaDataStructure;
+package akhilshettyym.JAVA.core.A_Basics.JavaDataStructure;
 
 import java.util.Collections;
 import java.util.TreeMap;

@@ -1,4 +1,4 @@
-package akhilshettyym.JAVA.MyCode.A_JavaTut.JavaDataStructure;
+package akhilshettyym.JAVA.core.A_Basics.JavaDataStructure;
 
 /* An Iterator is an object that can be used to loop through collections, like ArrayList and HashSet. It is called an "iterator" because "iterating" is the technical term for looping.
 To use an Iterator, you must import it from the java.util package. */
