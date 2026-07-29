@@ -78,15 +78,19 @@ class Solution {
 }
 ```
 
-### 628. Maximum Product of Three numbers: pending
+### 628. Maximum Product of Three numbers:
 
 ```java
 class Solution {
     public int maximumProduct(int[] nums) {
         Arrays.sort(nums);
-        int n = nums.length;
+        int n = nums.length - 1;
 
-        int product = nums[n-1] * nums[n-2] * nums[n-3];
+        int first_max = nums[n], second_max = nums[n-1], third_max = nums[n-2];
+        int first_min = nums[0], second_min = nums[1];
+
+        int product = Math.max(first_max * second_max * third_max, first_min * second_min * first_max);
+
         return product;
     }
 }
@@ -117,7 +121,7 @@ class Solution {
 }
 ```
 
-### 1979. Find Greatest Common Divisor of Array: pending
+### 1979. Find Greatest Common Divisor of Array:
 
 ```java
 class Solution {
@@ -161,7 +165,7 @@ class Solution {
 }
 ```
 
-### 268. Missing Number: pending
+### 268. Missing Number:
 
 ```java
 class Solution {
@@ -175,6 +179,32 @@ class Solution {
         }
 
         return expectedSum - actualSum;
+    }
+}
+```
+
+### 485. Max Consecutive Ones: pending
+
+```java
+class Solution {
+    public int findMaxConsecutiveOnes(int[] nums) {
+
+        int max_count = 0;
+        int curr_count = 0;
+        int n = nums.length;
+
+        for(int i = 0; i < n; i++) {
+            if(nums[i] == 1) {
+                curr_count++;
+
+            } else {
+                max_count = Math.max(max_count, curr_count);
+                curr_count = 0;
+            }
+        }
+
+    return Math.max(curr_count, max_count);
+
     }
 }
 ```
