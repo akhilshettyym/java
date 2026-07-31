@@ -143,7 +143,7 @@ class Solution {
 }
 ```
 
-### 3658. GCD of Odd and Even Sums: pending
+### 3658. GCD of Odd and Even Sums:
 
 ```java
 class Solution {
@@ -183,7 +183,7 @@ class Solution {
 }
 ```
 
-### 485. Max Consecutive Ones: pending
+### 485. Max Consecutive Ones:
 
 ```java
 class Solution {
@@ -205,6 +205,23 @@ class Solution {
 
     return Math.max(curr_count, max_count);
 
+    }
+}
+```
+
+### 136. Single Number (bitwise xor):
+
+```java
+class Solution {
+    public int singleNumber(int[] nums) {
+        
+        int ans = 0;
+
+        for(int num : nums){
+            ans ^= num;
+        }
+
+        return ans;
     }
 }
 ```
