@@ -1,4 +1,4 @@
-pending: 2
+pending: 3
 
 ### 1. Two Sum (two pointer):
 
