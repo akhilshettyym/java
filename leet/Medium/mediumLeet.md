@@ -235,7 +235,7 @@ class Solution {
 
 ---
 
-### 713. Subarray Product Less Than K: pending
+### 713. Subarray Product Less Than K:
 
 ```java
 class Solution {
@@ -245,7 +245,8 @@ class Solution {
     int count = 0;
     int product = 1;
 
-    for(int right = 0; right <= nums.length; right++) {
+    for(int right = 0; right < nums.length; right++) {
+        if(k <= 1) return 0;
 
         product *= nums[right];
 
@@ -263,7 +264,7 @@ class Solution {
 
 ---
 
-### 209. Minimum Size Subarray Sum (sliding window): pending
+### 209. Minimum Size Subarray Sum (sliding window):
 
 ```java
 class Solution {
