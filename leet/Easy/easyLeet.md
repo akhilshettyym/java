@@ -34,7 +34,7 @@ class Solution {
 }
 ```
 
-### 219. Contains Duplicate II: pending
+### 219. Contains Duplicate II:
 
 ```java
 import java.util.HashSet;

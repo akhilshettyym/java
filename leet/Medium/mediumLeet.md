@@ -1,5 +1,3 @@
-pending: 1
-
 ### 11. Container with most water (two pointer):
 
 ```java
@@ -113,7 +111,7 @@ class Solution {
 }
 ```
 
-### 75. Sort Colors (two pointers): pending
+### 75. Sort Colors (two pointers):
 
 ```java
 class Solution {
@@ -286,6 +284,39 @@ class Solution {
         }
 
         return min_length == Integer.MAX_VALUE ? 0 : min_length;
+    }
+}
+```
+
+---
+
+### 904. Fruit Into Baskets (sliding window):
+
+```java
+class Solution {
+    public int totalFruit(int[] fruits) {
+
+        int left = 0;
+        int max_ans = 0;
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for(int right = 0; right < fruits.length; right++) {
+            map.put(fruits[right], map.getOrDefault(fruits[right], 0) + 1);
+
+            while(map.size() > 2) {
+                map.put(fruits[left], map.get(fruits[left]) - 1);
+
+                if(map.get(fruits[left]) == 0) {
+                    map.remove(fruits[left]);
+                }
+                left++;
+            }
+
+            max_ans = Math.max(max_ans, right - left + 1);
+        }
+
+        return max_ans;
     }
 }
 ```
