@@ -1,5 +1,3 @@
-pending: 2
-
 ### 11. Container with most water (two pointer):
 
 ```java
@@ -113,7 +111,7 @@ class Solution {
 }
 ```
 
-### 75. Sort Colors (two pointers): pending
+### 75. Sort Colors (two pointers):
 
 ```java
 class Solution {
@@ -203,3 +201,124 @@ class Solution {
 }
 ```
 
+---
+
+### 1004. Max Consecutive Ones III (sliding window):
+
+```java
+class Solution {
+    public int longestOnes(int[] nums, int k) {
+
+        int left = 0;
+        int zero_count = 0;
+
+        for(int right = 0; right <= nums.length - 1; right++) {
+
+            if(nums[right] == 0){
+                zero_count++;
+            }
+
+            if(zero_count > k) {
+                if(nums[left] == 0) {
+                    zero_count--;
+                }
+
+                left++;
+            }
+        }
+        return nums.length - left;
+    }
+}
+```
+
+---
+
+### 713. Subarray Product Less Than K:
+
+```java
+class Solution {
+    public int numSubarrayProductLessThanK(int[] nums, int k) {
+
+    int left = 0;
+    int count = 0;
+    int product = 1;
+
+    for(int right = 0; right < nums.length; right++) {
+        if(k <= 1) return 0;
+
+        product *= nums[right];
+
+        while(product >= k) {
+            product /= nums[left];
+            left++;
+        }
+
+        count += right - left + 1;
+    }
+    return count;
+    }
+}
+```
+
+---
+
+### 209. Minimum Size Subarray Sum (sliding window):
+
+```java
+class Solution {
+    public int minSubArrayLen(int target, int[] nums) {
+
+        int sum = 0;
+        int left = 0;
+        int min_length = Integer.MAX_VALUE;
+
+        for(int right = 0; right <= nums.length - 1; right++) {
+
+            sum += nums[right];
+
+            while(sum >= target) {
+                min_length = Math.min(min_length, right - left + 1);
+                sum -= nums[left];
+                left++;
+            }
+        }
+
+        return min_length == Integer.MAX_VALUE ? 0 : min_length;
+    }
+}
+```
+
+---
+
+### 904. Fruit Into Baskets (sliding window):
+
+```java
+class Solution {
+    public int totalFruit(int[] fruits) {
+
+        int left = 0;
+        int max_ans = 0;
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for(int right = 0; right < fruits.length; right++) {
+            map.put(fruits[right], map.getOrDefault(fruits[right], 0) + 1);
+
+            while(map.size() > 2) {
+                map.put(fruits[left], map.get(fruits[left]) - 1);
+
+                if(map.get(fruits[left]) == 0) {
+                    map.remove(fruits[left]);
+                }
+                left++;
+            }
+
+            max_ans = Math.max(max_ans, right - left + 1);
+        }
+
+        return max_ans;
+    }
+}
+```
+
+---

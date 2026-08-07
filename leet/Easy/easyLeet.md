@@ -1,4 +1,4 @@
-pending: 2
+pending: 3
 
 ### 1. Two Sum (two pointer):
 
@@ -34,7 +34,7 @@ class Solution {
 }
 ```
 
-### 219. Contains Duplicate II: pending
+### 219. Contains Duplicate II:
 
 ```java
 import java.util.HashSet;
