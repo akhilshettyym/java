@@ -57,7 +57,7 @@ class Solution {
 }
 ```
 
-### 283. Move Zeros (two pointers): pending
+### 283. Move Zeros (two pointers):
 
 ```java
 class Solution {
